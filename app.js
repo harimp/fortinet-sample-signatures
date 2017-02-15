@@ -28,6 +28,10 @@ app.get('/data', validate(schema.data), (req, res) => {
   }
 });
 
+app.get('/stats', (req, res) => {
+
+});
+
 // Initialize and run server
 const port = process.env.PORT || 3000;
 

@@ -47,9 +47,13 @@ const getData = function getData(offset, pagesize, search) {
   // return searchResultData;
 };
 
+const getStats = function getStats() {
+
+};
 
 module.exports = {
   formatSignatures,
   formattedData,
   getData,
+  getStats,
 };
