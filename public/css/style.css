@@ -1,0 +1,67 @@
+body {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#main {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#logo {
+  text-align: center;
+}
+
+#logo > img {
+  padding: 0 25px;
+  background-color: #dc291e;
+  display: inline-block;
+  border-radius: 15px;
+  /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#data-table {
+  margin-top: 1em;
+  width: 80%;
+  margin-left: 10%;
+}
+
+#data-table caption {
+  font-size: 1.6em;
+  text-align: center;
+}
+
+#data-table thead {
+  font-weight: bold;
+}
+
+#data-table td {
+  text-align: center;
+}
+
+#data-table tfoot td:hover {
+  color: skyblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#table-search {
+  margin-left: 8px;
+  text-align: right;
+}
+
+#table-search select {
+}
+
+#table-search input {
+  margin-left: 10px;
+}
+
+#table-search button {
+  margin: 0 5px;
+}
+
+#footer {
+  text-align: center;
+}

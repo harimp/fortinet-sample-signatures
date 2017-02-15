@@ -1,0 +1,37 @@
+{
+  "name": "fortinet-sample-signatures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node ./node_modules/nodemon/bin/nodemon app.js --ignore public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harimp/fortinet-sample-signatures.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harimp/fortinet-sample-signatures/issues"
+  },
+  "homepage": "https://github.com/harimp/fortinet-sample-signatures#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "express-validation": "^1.0.1",
+    "joi": "^10.2.2",
+    "morgan": "^1.8.1",
+    "pug": "^2.0.0-beta11",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "nodemon": "^1.11.0"
+  }
+}
