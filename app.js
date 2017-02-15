@@ -29,7 +29,9 @@ app.get('/data', validate(schema.data), (req, res) => {
 });
 
 // Initialize and run server
+const port = process.env.PORT || 3000;
+
 dataController.formatSignatures();
-app.listen(3000, () => {
+app.listen(port, () => {
   logger.info('Server running on 3000');
 });
