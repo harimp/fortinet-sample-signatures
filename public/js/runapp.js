@@ -1,32 +1,6 @@
 /* eslint-disable no-console, no-unused-vars, no-param-reassign */
-/* global $, angular, getData, getAJAX, document */
-
-const getMultiplier = function getMultiplier() {
-  return angular.element($('#data-table-body')).scope().data.pageMultiplier;
-};
-
-const setMultiplier = function setMultiplier(x) {
-  angular.element($('#data-table-body')).scope().data.pageMultiplier = x;
-};
-
-const incMultiplier = function incMultiplier() {
-  setMultiplier(getMultiplier() + 1);
-};
-
-const updateTable = function updateTable() {
-  const type = 'name';
-  const query = $('#search-bar').val();
-  const pageSize = $('#pageSelect').val();
-  const targetPageSize = (isNaN(pageSize)) ? Infinity : Number(pageSize);
-  const multiplier = getMultiplier();
-
-  getData(null, multiplier * targetPageSize, { type, query }, (result) => {
-    const scope = angular.element($('#data-table-body')).scope();
-    scope.$apply(() => {
-      scope.data.data = result;
-    });
-  });
-};
+/* global $, angular, getData, getAJAX, document, updateTable, incMultiplier */
+/* global setMultiplier, getStats, d3, d3PieData, d3PieGenerate */
 
 const app = angular.module('dataTable', []);
 app.controller('dataController', () => {
@@ -34,9 +8,17 @@ app.controller('dataController', () => {
   updateTable();
 });
 
+let stats = null;
+
 /* Init */
 $(document).ready(() => {
-  $('#search-btn').click(updateTable);
+  getStats((result) => {
+    stats = result;
+  });
+  $('#search-btn').click(() => {
+    setMultiplier(1);
+    updateTable();
+  });
   $('#see-more').click(() => {
     incMultiplier();
     updateTable();

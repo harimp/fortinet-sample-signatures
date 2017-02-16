@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/signature/:id', (req, res) => {
+  res.render('signature', { data: req.params.id });
+});
+
 app.get('/data', validate(schema.data), (req, res) => {
   if (req.query.searchType !== 'undefined' && req.query.searchQuery !== 'undefined') {
     res.json(dataController.getData(req.query.offset, req.query.pagesize, {
@@ -29,13 +33,14 @@ app.get('/data', validate(schema.data), (req, res) => {
 });
 
 app.get('/stats', (req, res) => {
-
+  res.json(dataController.getStats());
 });
 
 // Initialize and run server
 const port = process.env.PORT || 3000;
 
 dataController.formatSignatures();
+dataController.gatherStatInfo();
 app.listen(port, () => {
   logger.info('Server running on 3000');
 });
